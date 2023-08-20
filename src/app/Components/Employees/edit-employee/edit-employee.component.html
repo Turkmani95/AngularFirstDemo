@@ -5,7 +5,7 @@
             <form #form="ngForm" (ngSubmit)="updateEmployee()" >
                 <div class="mb-3">
                     <label for="id" class="form-label">Id</label>
-                    <input type="text" class="form-control" id="id" readonly name="id" [(ngModel)]="employeeDetails.id">
+                    <input type="text" disabled class="form-control" id="id" readonly name="id" [(ngModel)]="employeeDetails.id">
                 </div>
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
@@ -27,13 +27,20 @@
                         [(ngModel)]="employeeDetails.salary">
                 </div>
                 <div class="mb-3">
-                    <label for="department" class="form-label">Depatrment</label>
+                    <label for="department" class="form-label">Department</label>
                     <input type="text" class="form-control" id="department" name="department"
                         [(ngModel)]="employeeDetails.department">
                 </div>
-                <button type="submit" class="btn btn-primary mr-5">Save</button>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary mr-5" style="margin-right: 5px;">Save</button>
                 <button type="button" class="btn btn-danger " (click)="deleteEmployee(employeeDetails.id)">Delete</button>
             
+                </div>
+                <div class="mb-3">
+                    <button type="button" class="btn btn-success " routerLink="">Go Back</button>
+
+                </div>
+               
             </form>
         </div>
     </div>
